@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Car Test Booking System - Portfolio Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+
+        .intro-section, .demo-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .video-container {
+            margin: 20px 0;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .benefits {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+        }
+
+        .benefits h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        .benefits ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+
+        .challenges {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .challenges strong {
+            color: #856404;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h4 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-badge {
+            background-color: #e8eaf6;
+            color: #3949ab;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .timestamp-link {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 2px 5px;
+            background-color: #e8eaf6;
+            border-radius: 3px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+
+        .timestamp-link:hover {
+            background-color: #c5cae9;
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: #e8eaf6;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .video-note {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .problem-solution {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .problem, .solution {
+            flex: 1;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .problem {
+            background-color: #ffe0e0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .solution {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        .checkmark {
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Automated Vehicle Inspection Booking System</h1>
+        <p>A sophisticated API solution that simplifies the car testing appointment process</p>
+    </header>
+
+    <section class="intro-section">
+        <h2>Project Overview</h2>
+        
+        <div class="problem-solution">
+            <div class="problem">
+                <h3>The Challenge</h3>
+                <p>In Ireland, car owners must schedule mandatory vehicle tests (NCT) through the national system. However:</p>
+                <ul>
+                    <li>Available slots are often booked weeks in advance</li>
+                    <li>Desirable slots disappear quickly when they become available</li>
+                    <li>Users need to constantly check the website for cancellations</li>
+                    <li>The booking process is manual and time-consuming</li>
+                </ul>
+            </div>
+            
+            <div class="solution">
+                <h3>My Solution</h3>
+                <p>I developed a "concierge" system that automates the tedious parts of booking, while keeping users in control:</p>
+                <ul>
+                    <li>Automatically scans for available appointment slots</li>
+                    <li>Temporarily holds a slot when found</li>
+                    <li>Notifies the user immediately</li>
+                    <li>Allows the user to complete the booking officially on the NCTS website</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <div class="tech-badge">Python</div>
+            <div class="tech-badge">FastAPI</div>
+            <div class="tech-badge">Selenium</div>
+            <div class="tech-badge">Web Automation</div>
+            <div class="tech-badge">REST API</div>
+            <div class="tech-badge">Webhooks</div>
+            <div class="tech-badge">Proxy Management</div>
+            <div class="tech-badge">Async Programming</div>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <h2>How It Works</h2>
+        
+        <p>This demo shows the full workflow of the system from searching for appointment slots to holding them for a customer:</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4><span class="checkmark">✓</span> Smart Slot Search</h4>
+                <p>Searches for available car test slots based on location and date preferences, using proxies to prevent rate limiting.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4><span class="checkmark">✓</span> Slot Validation</h4>
+                <p>Quickly verifies if a specific slot is still available before attempting to reserve it.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4><span class="checkmark">✓</span> Automatic Slot Holding</h4>
+                <p>Temporarily reserves a slot while the customer decides, making it visible only to them.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4><span class="checkmark">✓</span> Real-time Notifications</h4>
+                <p>Instantly alerts the system/customer when a suitable slot is found and held.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4><span class="checkmark">✓</span> Resource Management</h4>
+                <p>Efficiently releases held slots and cleans up resources when a reservation is completed or cancelled.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4><span class="checkmark">✓</span> Secure API Design</h4>
+                <p>Implements API key authentication, webhook verification, and structured response formats.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <h2>Demo 1: Finding Available Appointment Slots</h2>
+        <p>This demonstration shows how the system searches for available slots based on customer preferences:</p>
+
+        <div class="video-container">
+            <div id="search-player"></div>
+            <p class="video-note">Video shows the system searching for available slots across different test centers on specific dates.</p>
+        </div>
+
+        <p>The search process:</p>
+        <ol>
+            <li>Customer specifies their vehicle registration and preferred locations/dates</li>
+            <li>System launches an automated browser session to search the official website</li>
+            <li>All available slots are found and returned via webhook notification</li>
+            <li>The client application receives a structured list of available slots</li>
+        </ol>
+        
+        <p>Key moments in the demo: <span class="timestamp-link" onclick="seekVideo('search-player', 41)">0:41</span> (Switching between centers), <span class="timestamp-link" onclick="seekVideo('search-player', 60)">1:00</span> (Processing dates), <span class="timestamp-link" onclick="seekVideo('search-player', 80)">1:20</span> (Receiving results)</p>
+    </section>
+
+    <section class="demo-section">
+        <h2>Demo 2: Validating & Holding a Slot</h2>
+        <p>Once a desirable slot is identified, the system validates its availability and holds it for the customer:</p>
+
+        <div class="video-container">
+            <div id="book-player"></div>
+            <p class="video-note">Video shows the system reserving and holding a slot for a specific vehicle registration.</p>
+        </div>
+
+        <p>The holding process:</p>
+        <ol>
+            <li>System validates the selected slot is still available</li>
+            <li>Automated browser navigates the booking process using temporary information</li>
+            <li>The slot is reached and held at the payment page</li>
+            <li>A background process maintains the hold for ~30 minutes</li>
+            <li>The customer is notified that a slot is being held for them</li>
+        </ol>
+        
+        <p>Key moments in the demo: <span class="timestamp-link" onclick="seekVideo('book-player', 16)">0:16</span> (Navigation start), <span class="timestamp-link" onclick="seekVideo('book-player', 49)">0:49</span> (Using temporary data), <span class="timestamp-link" onclick="seekVideo('book-player', 75)">1:15</span> (Reaching payment page), <span class="timestamp-link" onclick="seekVideo('book-player', 193)">3:13</span> (Proving the slot is held)</p>
+
+        <div class="benefits">
+            <h3>Key Business Benefits</h3>
+            <ul>
+                <li><strong>Time Savings:</strong> Customers no longer need to constantly refresh the website looking for slots</li>
+                <li><strong>Increased Success Rate:</strong> The automation can find and hold slots faster than manual searching</li>
+                <li><strong>Customer Satisfaction:</strong> Users still complete their own booking, maintaining full control</li>
+                <li><strong>Ethical Approach:</strong> The system works as a "concierge service" rather than bypassing the official platform</li>
+                <li><strong>Scalability:</strong> Can handle multiple concurrent searches and holds efficiently</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <h2>Technical Implementation Details</h2>
+        
+        <p>This project demonstrates my expertise in:</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>API Development</h4>
+                <p>Built with FastAPI for high performance and excellent developer experience. Implements best practices for authentication, documentation, and error handling.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Web Automation</h4>
+                <p>Uses Selenium with undetected-chromedriver to navigate complex web flows reliably while avoiding detection measures.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Asynchronous Programming</h4>
+                <p>Leverages Python's asyncio for efficient concurrent operations, background tasks, and resource management.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Proxy Integration</h4>
+                <p>Implements sophisticated proxy rotation and management to prevent IP blocking and rate limiting.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Webhook Communication</h4>
+                <p>Uses asynchronous webhook notifications to communicate results between services in real-time.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Session Management</h4>
+                <p>Implements intelligent background tasks to maintain sessions and properly clean up resources.</p>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <div id="cancel-player"></div>
+            <p class="video-note">Video shows the system properly cleaning up resources when a session is cancelled.</p>
+        </div>
+        
+        <p>Key moments in the demo: <span class="timestamp-link" onclick="seekVideo('cancel-player', 5)">0:05</span> (Cancellation request), <span class="timestamp-link" onclick="seekVideo('cancel-player', 10)">0:10</span> (Resource cleanup), <span class="timestamp-link" onclick="seekVideo('cancel-player', 25)">0:25</span> (Confirmation)</p>
+    </section>
+
+    <section class="demo-section">
+        <h2>Similar Projects I Can Build For You</h2>
+        
+        <p>The techniques and architecture demonstrated in this project can be applied to many business problems:</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>Booking & Reservation Systems</h4>
+                <p>Automated systems for restaurants, hotels, event venues, or any service requiring appointment scheduling.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>E-commerce Automation</h4>
+                <p>Product inventory monitoring, price tracking, or automated purchasing systems for high-demand items.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Data Collection & Monitoring</h4>
+                <p>Automated scraping solutions to track competitors, gather market intelligence, or monitor specific web content.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Process Automation</h4>
+                <p>Custom solutions to automate repetitive web-based business processes that currently require manual intervention.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Notification Systems</h4>
+                <p>Real-time monitoring and alerting for important business events or opportunities.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h4>Custom API Development</h4>
+                <p>Building bridges between systems that don't natively communicate, with robust error handling and monitoring.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Developed by Leonard Cote | API & Automation Specialist</p>
+    </footer>
+
+    <!-- YouTube API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        // Player objects to store YouTube players
+        var players = {};
+        
+        // YouTube API will call this function when the API is ready
+        function onYouTubeIframeAPIReady() {
+            // Create players for each video
+            players['search-player'] = new YT.Player('search-player', {
+                height: '100%',
+                width: '100%',
+                videoId: '0KNRwylWfWw',
+                playerVars: {
+                    'rel': 0,
+                    'vq': 'hd720'
+                }
+            });
+            
+            players['book-player'] = new YT.Player('book-player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'lyw6223EXYE',
+                playerVars: {
+                    'rel': 0,
+                    'vq': 'hd720'
+                }
+            });
+            
+            players['cancel-player'] = new YT.Player('cancel-player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'cSsAhgwTKoI',
+                playerVars: {
+                    'rel': 0,
+                    'vq': 'hd720'
+                }
+            });
+        }
+        
+        // Function to seek to a specific time in YouTube videos
+        function seekVideo(playerId, seconds) {
+            // Make sure the player exists and is ready
+            if (players[playerId] && players[playerId].seekTo) {
+                // Seek to the specified time
+                players[playerId].seekTo(seconds, true);
+                
+                // Play the video briefly to ensure it loads the frame
+                players[playerId].playVideo();
+                
+                // Add a small delay then pause the video
+                setTimeout(function() {
+                    players[playerId].pauseVideo();
+                }, 200); // Small delay to ensure the frame is loaded
+            } else {
+                console.warn("Player not ready yet:", playerId);
+                // Retry after a short delay if player isn't ready yet
+                setTimeout(function() {
+                    if (players[playerId] && players[playerId].seekTo) {
+                        players[playerId].seekTo(seconds, true);
+                        players[playerId].playVideo();
+                        
+                        // Add a small delay then pause the video
+                        setTimeout(function() {
+                            players[playerId].pauseVideo();
+                        }, 200);
+                    } else {
+                        console.error("Player still not ready:", playerId);
+                    }
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
